@@ -3,6 +3,7 @@
 A miniature device that's keeping track of power outages.
 
 ![](docs/device.jpg)
+### [Video in action](https://twitter.com/dr2mod/status/1591815766994980866)
 
 ### Hardware
 * Raspberry Pi Pico
