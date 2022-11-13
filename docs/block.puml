@@ -1,0 +1,24 @@
+@startuml
+start
+:read expected powercut flag;
+if (Expected powercut?) then (no)
+
+:read saved on_timestamp & last_timestamp;
+:calculate blackout timeframe
+append timeframe to the file;
+:save current time to on_timestamp;
+else (yes)
+:clear extected powercut flag;
+endif
+:save current time to last_timestamp;
+:find last x of blackout from file;
+:full update of the display;
+:display blackouts;
+while (Always)
+  :save current time to last_timestamp;
+  :partial update of the display;
+  :light sleep for 30 seconds;
+endwhile
+-[hidden]->
+detach
+@enduml
