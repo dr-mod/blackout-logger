@@ -28,7 +28,7 @@ class ds3231(object):
         month = "%02d" % ti[1]
         day = "%02d" % ti[2]
         now_time = binascii.unhexlify(
-            (second + " " + minute + " " + hour + " " + week + " " + day + " " + month + " " + year).replace(' ', ''))
+            (' '.join([second, minute, hour, week, day, month, year])).replace(' ', ''))
         self.bus.writeto_mem(int(self.address), int(self.start_reg), now_time)
 
     def read_time(self):
